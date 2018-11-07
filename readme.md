@@ -5,8 +5,8 @@ ergonomic.
 
 ```gradle
 dependencies {
-    annotationProcessor 'com.palantir.graal.annotations:graal-annotations-processors'
-    compileOnly 'com.palantir.graal.annotations:graal-annotations-api'
+    annotationProcessor 'com.palantir.graal.annotations:graal-annotations-processors:<version>'
+    compileOnly 'com.palantir.graal.annotations:graal-annotations-api:<version>'
 }
 ```
 
