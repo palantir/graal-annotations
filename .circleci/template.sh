@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-export CIRCLECI_TEMPLATE=java-library
+export CIRCLECI_TEMPLATE=java-library-oss
