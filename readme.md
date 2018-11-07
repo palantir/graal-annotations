@@ -3,6 +3,13 @@ Graal Annotations and Processors
 Basic annotations and associated processors to make working with GraalVM easier and more
 ergonomic.
 
+```gradle
+dependencies {
+    annotationProcessor 'com.palantir.graal.annotations:graal-annotations-processors:<version>'
+    compileOnly 'com.palantir.graal.annotations:graal-annotations-api:<version>'
+}
+```
+
 `@GraalReflectable`
 -------------------
 To make use of reflection with AOT compilation, GraalVM requires explicit reflection
