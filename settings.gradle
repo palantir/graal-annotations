@@ -2,4 +2,3 @@ rootProject.name = 'graal-annotations'
 
 include 'graal-annotations-api'
 include 'graal-annotations-processors'
-enableFeaturePreview('STABLE_PUBLISHING') // this will be the default from Gradle 5.0
