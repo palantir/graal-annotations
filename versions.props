@@ -1,9 +1,9 @@
-com.fasterxml.jackson.*:* = 2.9.8
+com.fasterxml.jackson.*:* = 2.10.2
 com.google.auto.service:* = 1.0-rc4
 com.google.guava:guava = 23.6.1-jre
 com.google.testing.compile:compile-testing = 0.15
 junit:junit = 4.12
-org.assertj:assertj-core = 3.11.1
-org.immutables:* = 2.7.4
-org.mockito:mockito-core = 2.23.4
-org.slf4j:* = 1.7.25
+org.assertj:assertj-core = 3.15.0
+org.immutables:* = 2.8.3
+org.mockito:mockito-core = 3.3.0
+org.slf4j:* = 1.7.30
