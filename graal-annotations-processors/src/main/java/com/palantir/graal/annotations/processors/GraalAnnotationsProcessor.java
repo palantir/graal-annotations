@@ -23,6 +23,7 @@ import com.palantir.graal.reflection.FieldReflectionConfig;
 import com.palantir.graal.reflection.MethodReflectionConfig;
 import com.palantir.graal.reflection.ReflectionConfigFile;
 import com.palantir.graal.reflection.SummaryClassReflectionConfig;
+import java.io.IOException;
 import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Processor;
@@ -46,7 +47,7 @@ public final class GraalAnnotationsProcessor extends AbstractProcessor {
     private ReflectionConfigFile reflection = new ReflectionConfigFile();
 
     @Override
-    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+    public boolean process(Set<? extends TypeElement> _annotations, RoundEnvironment roundEnv) {
         try {
             if (roundEnv.processingOver()) {
                 FileObject fileObject = processingEnv.getFiler()
