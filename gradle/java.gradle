@@ -19,6 +19,6 @@ apply plugin: 'com.palantir.baseline-checkstyle'
 apply plugin: 'com.palantir.baseline-eclipse'
 apply plugin: 'com.palantir.baseline-error-prone'
 apply plugin: 'com.palantir.baseline-idea'
-apply from: "${rootDir}/gradle/bintray-publish.gradle"
+apply plugin: 'com.palantir.external-publish-jar'
 
 sourceCompatibility = '1.8'
