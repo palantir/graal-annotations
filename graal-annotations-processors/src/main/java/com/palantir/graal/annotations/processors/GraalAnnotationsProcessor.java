@@ -17,7 +17,7 @@
 package com.palantir.graal.annotations.processors;
 
 import com.google.auto.service.AutoService;
-import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.palantir.graal.annotations.GraalReflectable;
 import com.palantir.graal.reflection.FieldReflectionConfig;
 import com.palantir.graal.reflection.MethodReflectionConfig;
@@ -53,7 +53,7 @@ public final class GraalAnnotationsProcessor extends AbstractProcessor {
                         .createResource(StandardLocation.CLASS_OUTPUT, "", ReflectionConfigFile.PATH);
                 reflection.render(fileObject);
             } else {
-                processImpl(annotations, roundEnv);
+                processImpl(roundEnv);
             }
         } catch (Exception e) {
             // do not allow exceptions to reach the compiler
@@ -62,7 +62,7 @@ public final class GraalAnnotationsProcessor extends AbstractProcessor {
         return true;
     }
 
-    private void processImpl(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+    private void processImpl(RoundEnvironment roundEnv) {
         for (Element element : roundEnv.getElementsAnnotatedWith(GraalReflectable.class)) {
 
             // grab config from annotation
@@ -104,7 +104,7 @@ public final class GraalAnnotationsProcessor extends AbstractProcessor {
 
         reflection.addMethod(classElement.getQualifiedName().toString(), MethodReflectionConfig.builder()
                 .name(element.getSimpleName().toString())
-                .parameterTypes(Iterables.transform(element.getParameters(), ve -> ve.asType().toString()))
+                .parameterTypes(Lists.transform(element.getParameters(), ve -> ve.asType().toString()))
                 .build());
     }
 
