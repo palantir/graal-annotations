@@ -55,7 +55,7 @@ public final class GraalAnnotationsProcessor extends AbstractProcessor {
             } else {
                 processImpl(roundEnv);
             }
-        } catch (Exception e) {
+        } catch (IOException | RuntimeException e) {
             // do not allow exceptions to reach the compiler
             error(e.getMessage(), null);
         }
